@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br" style="background-color:#ffffff;">
+%%[
+  /* Recupera os valores da Data Extension */
+  VAR @Email
+  VAR @Cliente_Nome
+  VAR @Contrato_Encerramento
+  VAR @Consultor_Nome
+  VAR @Consultor_Email
+  VAR @Consultor_Telefone
+
+  SET @Email = AttributeValue("Email")
+  SET @Cliente_Nome = AttributeValue("Cliente_Nome")
+  SET @Contrato_Encerramento = AttributeValue("Contrato_Encerramento")
+  SET @Consultor_Nome = AttributeValue("Consultor_Nome")
+  SET @Consultor_Email = AttributeValue("Consultor_Email")
+  SET @Consultor_Telefone = AttributeValue("Consultor_Telefone")
+
+  IF Empty(@Cliente_Nome) THEN
+    SET @Cliente_Nome = "Cliente"
+  ENDIF
+
+  IF Empty(@Contrato_Encerramento) THEN
+    SET @Contrato_Encerramento = "-"
+  ENDIF
+
+  IF Empty(@Consultor_Nome) THEN
+    SET @Consultor_Nome = "Equipe Comercial"
+  ENDIF
+
+  IF Empty(@Consultor_Email) THEN
+    SET @Consultor_Email = "atendimento@empresaexemplo.com"
+  ENDIF
+
+  IF Empty(@Consultor_Telefone) THEN
+    SET @Consultor_Telefone = "(00) 0000-0000"
+  ENDIF
+]%%
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Renovação do Contrato de Energia</title>
+</head>
+
+<body style="margin:0; padding:0; background-color:#ffffff; font-family:Arial, sans-serif;">
+  <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="background-color:#ffffff;">
+    <tr>
+      <td align="center">
+        <table role="presentation" width="800" cellspacing="0" cellpadding="0" border="0" style="max-width:800px; width:100%;">
+
+          <tr>
+            <td style="background-color:#f5821e; padding:30px; color:#ffffff; border-top:10px solid #d96f12;">
+              <div style="font-size:20px; font-weight:bold; margin-bottom:35px;">
+                Energia Livre
+              </div>
+
+              <div style="font-size:26px; line-height:1.2; font-weight:bold;">
+                Lembrete importante
+              </div>
+
+              <div style="font-size:16px; line-height:1.4; margin-top:8px;">
+                Renovação do Contrato de Energia
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="background-color:#f7f5f3; padding:30px; border-top:2px solid #f5821e;">
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0">
+                <tr>
+                  <td style="background-color:#ffffff; padding:30px; border:1px solid #c9c9c9; border-radius:10px; color:#59575c; font-size:14px; line-height:1.5;">
+
+                    <p style="font-size:16px; color:#f5821e; margin:0 0 20px 0;">
+                      <strong>À %%=v(@Cliente_Nome)=%%,</strong>
+                    </p>
+
+                    <p>
+                      Identificamos que o seu contrato de fornecimento de energia está previsto para encerramento em
+                      <strong>%%=v(@Contrato_Encerramento)=%%</strong>.
+                    </p>
+
+                    <p>
+                      Ao longo da nossa parceria, construímos uma relação pautada pela confiança, transparência e solidez.
+                      Temos grande interesse em renovar essa parceria e seguir ao lado da sua empresa nos próximos anos.
+                    </p>
+
+                    <p>
+                      Iniciar as tratativas de renovação com antecedência permite avaliar as melhores condições para o próximo
+                      período contratual, proporcionando mais previsibilidade e segurança para o planejamento da sua empresa.
+                    </p>
+
+                    <p>
+                      Nossa equipe está à disposição para conduzir todo o processo de renovação e esclarecer eventuais dúvidas.
+                      Para iniciar as tratativas, entre em contato com
+                      <strong>%%=v(@Consultor_Nome)=%%</strong>, pelo e-mail
+                      <a href="mailto:%%=v(@Consultor_Email)=%%" style="color:#f5821e; text-decoration:none;">
+                        %%=v(@Consultor_Email)=%%
+                      </a>
+                      ou pelo telefone <strong>%%=v(@Consultor_Telefone)=%%</strong>.
+                    </p>
+
+                    <p style="margin-top:24px;">
+                      Atenciosamente,<br>
+                      <strong>Equipe Comercial</strong><br>
+                      <a href="mailto:atendimento@empresaexemplo.com" style="color:#f5821e; text-decoration:none;">
+                        atendimento@empresaexemplo.com
+                      </a><br>
+                      (00) 0000-0000
+                    </p>
+
+                  </td>
+                </tr>
+              </table>
+
+              <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" style="margin-top:30px;">
+                <tr>
+                  <td style="background-color:#ffffff; padding:30px; border:1px solid #c9c9c9; border-radius:10px; color:#59575c; font-size:14px; line-height:1.5;">
+                    <p style="font-size:16px; color:#f5821e; margin:0 0 15px 0;">
+                      <strong>Canais de atendimento</strong>
+                    </p>
+
+                    Permanecemos à disposição em caso de dúvidas e esclarecimentos.<br><br>
+                    Telefone e WhatsApp: (00) 0000-0000<br>
+                    E-mail:
+                    <a href="mailto:atendimento@empresaexemplo.com" style="color:#f5821e; text-decoration:none;">
+                      atendimento@empresaexemplo.com
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </td>
+          </tr>
+
+          <tr>
+            <td style="background-color:#f7f5f3; border-top:2px solid #cccccc; padding:20px 62px; color:#59575c; font-size:10px; line-height:1.5;">
+              Você está recebendo este e-mail pois foi identificado como contato relevante em uma operação comercial.<br><br>
+              As informações aqui contidas são destinadas exclusivamente ao(s) destinatário(s), podendo conter dados confidenciais.
+              Caso tenha recebido esta mensagem por engano, solicitamos que a exclua imediatamente.<br><br>
+              © 2026 Empresa Exemplo S.A.<br>
+              Rua Exemplo, 1000, Curitiba, Paraná, Brasil<br><br>
+
+              <a href="%%profile_center_url%%" alias="Centro de Perfil" style="color:#59575c;">Gerenciar Preferências</a> |
+              <a href="%%unsub_center_url%%" alias="Cancelar Inscrição" style="color:#59575c;">Cancelar Inscrição</a>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+
+  <custom name="opencounter" type="tracking"/>
+</body>
+</html>
