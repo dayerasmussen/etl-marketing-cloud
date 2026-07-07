@@ -1,5 +1,19 @@
 # ETL Pipeline — Marketing Cloud Customer Journeys
 
+## Resultado do Pipeline
+
+O processo ETL gera duas bases finais preparadas para importação em uma plataforma de automação de marketing.
+
+Essas bases alimentam templates HTML dinâmicos, que utilizam AMPscript para personalizar automaticamente informações como:
+
+- Nome do cliente;
+- Data de encerramento do contrato;
+- Nome do consultor responsável;
+- E-mail do consultor;
+- Telefone do consultor.
+
+O resultado do projeto não é apenas a geração de planilhas estruturadas, mas também a preparação dos dados para personalização dinâmica de campanhas de comunicação.
+
 ## O que é esse projeto
 
 Pipeline ETL (Extract, Transform, Load) para consolidação de múltiplas fontes de dados, aplicação de regras de negócio e preparação de bases para campanhas no Salesforce Marketing Cloud.
